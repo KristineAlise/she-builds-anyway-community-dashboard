@@ -4,184 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>She Builds Anyway — Community Dashboard</title>
-<style>
-:root{--pacific:#3B7A9A;--pacific-dk:#2D5F77;--pacific-lt:#D6E8F0;--coral:#E89B8A;--coral-dk:#C97B69;--coral-lt:#FAE8E4;--cream:#FAF3E7;--blush:#F5C2C0;--plum:#4A3548;--plum-lt:#6B5470;--gold:#D9A95C;--white:#FFFFFF;--border:#E8DECE;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;background:var(--cream);color:var(--plum);padding:0 0 48px;}
-.topbar{background:var(--pacific);color:#fff;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-.topbar-name{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:normal;letter-spacing:0.02em;}
-.topbar-tag{font-size:12px;opacity:0.75;margin-top:2px;}
-.topbar-meta{font-size:12px;opacity:0.85;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-.hero{background:var(--pacific-lt);border-bottom:1px solid #BACFDA;padding:16px 28px;}
-.hero h2{font-family:Georgia,serif;font-size:15px;font-weight:normal;color:var(--pacific);font-style:italic;}
-.hero p{font-size:12px;color:var(--plum-lt);margin-top:3px;}
-.emeta{border-bottom:1px dashed var(--coral);cursor:text;outline:none;color:var(--pacific);font-weight:600;min-width:60px;display:inline-block;}
-.emeta:focus{border-bottom-style:solid;}
-.wrap{padding:22px 28px;}
-.section-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pacific);border-left:3px solid var(--coral);border-radius:0;padding:0 0 6px 10px;margin-bottom:10px;border-bottom:1px solid var(--border);}
-.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:20px;}
-.cards2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.mc{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:72px;transition:border-color 0.15s;}
-.mc:focus-within{border-color:var(--pacific);}
-.mcl{font-size:11px;color:var(--plum-lt);margin:0 0 5px;font-weight:400;}
-.mcv{font-size:24px;font-weight:700;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;border-radius:4px;font-family:Georgia,serif;}
-.mcv:focus{background:var(--pacific-lt);padding:0 4px;}
-.mcvs{font-size:14px;font-weight:600;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;}
-.mcvs:focus{background:var(--pacific-lt);padding:0 2px;border-radius:3px;}
-.cls-row{display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 12px;transition:border-color 0.15s;}
-.cls-row:hover{border-color:var(--pacific);}
-.cls-name{font-size:12px;color:var(--plum);font-weight:500;flex:1;margin-right:8px;}
-.pill{font-size:10px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:3px 10px;border-radius:99px;cursor:pointer;border:none;white-space:nowrap;flex-shrink:0;}
-.pill:hover{opacity:0.85;}
-.win{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:90px;font-size:13px;color:var(--plum-lt);outline:none;display:block;width:100%;font-style:italic;line-height:1.6;}
-.win:focus{border-color:var(--coral);color:var(--plum);font-style:normal;}
-.log-btn{font-size:13px;font-weight:600;padding:10px 22px;cursor:pointer;background:var(--coral);color:var(--white);border:none;border-radius:8px;letter-spacing:0.02em;transition:background 0.15s;}
-.log-btn:hover{background:var(--coral-dk);}
-.footer{background:var(--pacific);color:rgba(255,255,255,0.7);font-size:11px;text-align:center;padding:12px 20px;margin-top:16px;font-style:italic;}
-.footer strong{color:#fff;}
-</style>
+<style>:root{--pacific:#3B7A9A;--pacific-dk:#2D5F77;--pacific-lt:#D6E8F0;--coral:#E89B8A;--coral-dk:#C97B69;--coral-lt:#FAE8E4;--cream:#FAF3E7;--blush:#F5C2C0;--blush-lt:#FDF0EF;--plum:#4A3548;--plum-lt:#6B5470;--gold:#D9A95C;--gold-lt:#FBF0DC;--white:#FFFFFF;--border:#E8DECE;}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;background:var(--cream);color:var(--plum);padding:0 0 48px;}.topbar{background:var(--pacific);color:#fff;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}.topbar-name{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:normal;letter-spacing:0.02em;}.topbar-tag{font-size:12px;opacity:0.75;margin-top:2px;}.topbar-meta{font-size:12px;opacity:0.8;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}.hero{background:var(--pacific-lt);border-bottom:1px solid #BACFDA;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.hero-left h2{font-family:Georgia,serif;font-size:15px;font-weight:normal;color:var(--pacific);font-style:italic;}.hero-left p{font-size:12px;color:var(--plum-lt);margin-top:3px;}.emeta{border-bottom:1px dashed var(--coral);cursor:text;outline:none;color:var(--pacific);font-weight:600;min-width:64px;display:inline-block;}.emeta:focus{border-bottom-style:solid;}.wrap{padding:24px 28px;}.section-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pacific);border-left:3px solid var(--coral);padding:0 0 6px 10px;margin-bottom:10px;border-bottom:1px solid var(--border);}.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-bottom:22px;}.cards2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.mc{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:72px;transition:border-color 0.15s;}.mc:focus-within{border-color:var(--pacific);}.mcl{font-size:11px;color:var(--plum-lt);margin:0 0 5px;font-weight:400;}.mcv{font-size:24px;font-weight:700;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;border-radius:4px;font-family:Georgia,serif;}.mcv:focus{background:var(--pacific-lt);padding:0 4px;}.mcvs{font-size:15px;font-weight:600;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;}.mcvs:focus{background:var(--pacific-lt);padding:0 2px;border-radius:3px;}.cls-row{display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 12px;transition:border-color 0.15s;}.cls-row:hover{border-color:var(--pacific);}.cls-name{font-size:12px;color:var(--plum);font-weight:500;flex:1;margin-right:8px;}.pill{font-size:10px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:3px 10px;border-radius:99px;cursor:pointer;border:none;white-space:nowrap;flex-shrink:0;transition:opacity 0.15s;}.pill:hover{opacity:0.85;}.win{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:90px;font-size:13px;color:var(--plum-lt);outline:none;display:block;width:100%;font-style:italic;line-height:1.6;}.win:focus{border-color:var(--coral);color:var(--plum);font-style:normal;}.log-btn{font-size:13px;font-weight:600;padding:10px 22px;cursor:pointer;background:var(--coral);color:var(--white);border:none;border-radius:8px;letter-spacing:0.02em;transition:background 0.15s;}.log-btn:hover{background:var(--coral-dk);}.footer{background:var(--pacific);color:rgba(255,255,255,0.7);font-size:11px;text-align:center;padding:12px 20px;margin-top:16px;font-style:italic;}.footer strong{color:#fff;}</style>
 </head>
 <body>
-<div class="topbar">
-<div><div class="topbar-name">She Builds Anyway</div><div class="topbar-tag">Community Progress Dashboard</div></div>
-<div class="topbar-meta">
-<span>Updated: <span class="emeta" contenteditable="true">—</span></span>
-<span>Launched: <span class="emeta" contenteditable="true">—</span></span>
-</div>
-</div>
-<div class="hero"><h2>She stopped asking permission.</h2><p>AI for women becoming.</p></div>
+<div class="topbar"><div><div class="topbar-name">She Builds Anyway</div><div class="topbar-tag">Community Progress Dashboard</div></div><div class="topbar-meta"><span>Updated: <span class="emeta" contenteditable="true">—</span></span><span>Launched: <span class="emeta" contenteditable="true">—</span></span></div></div>
+<div class="hero"><div class="hero-left"><h2>She stopped asking permission.</h2><p>AI for women becoming.</p></div></div>
 <div class="wrap">
-<div class="grid2">
-<div><div class="section-label">Members</div><div class="cards2">
-<div class="mc"><p class="mcl">Total members</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">New this week</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Cancellations</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Net change</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-<div><div class="section-label">Engagement</div><div class="cards2">
-<div class="mc"><p class="mcl">Posts this week</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Likes this week</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Comments</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Active members (30d)</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-</div>
-<div class="grid2">
-<div><div class="section-label">Retention</div><div class="cards2">
-<div class="mc"><p class="mcl">Retention rate</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Churn rate</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Avg lifespan</p><span class="mcvs" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Longest member</p><span class="mcvs" contenteditable="true">—</span></div>
-</div></div>
-<div><div class="section-label">Revenue</div><div class="cards2">
-<div class="mc"><p class="mcl">MRR</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">New MRR this week</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Churned MRR</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">All-time revenue</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-</div>
-<div class="grid2">
-<div><div class="section-label">Visitors</div><div class="cards2">
-<div class="mc"><p class="mcl">Page views</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Unique visitors</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Top source</p><span class="mcvs" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Bounce rate</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-<div><div class="section-label">Signups &amp; conversions</div><div class="cards2">
-<div class="mc"><p class="mcl">New signups</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Free to paid %</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Visitor to member %</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Cost per acquisition</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-</div>
-<div class="grid2">
-<div><div class="section-label">Discovery ranking</div><div class="cards2">
-<div class="mc"><p class="mcl">Overall ranking</p><span class="mcv" contenteditable="true">—</span></div>
-<div class="mc"><p class="mcl">Category ranking</p><span class="mcv" contenteditable="true">—</span></div>
-</div></div>
-<div><div class="section-label">Classroom progress</div>
-<div id="classrooms" style="display:flex;flex-direction:column;gap:6px"></div>
-</div>
-</div>
-<div class="grid2" style="margin-bottom:18px">
-<div><div class="section-label">This week's wins</div>
-<div class="win" contenteditable="true" id="wins">What went well this week?</div></div>
-<div><div class="section-label">Focus &amp; notes</div>
-<div class="win" contenteditable="true" id="focus">What are you focused on?</div></div>
-</div>
-<div style="display:flex;justify-content:flex-end">
-<button class="log-btn" onclick="logMetrics()">Log this week &#x2197;</button>
-</div>
+<div class="grid2"><div><div class="section-label">Members</div><div class="cards2"><div class="mc"><p class="mcl">Total members</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">New this week</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Cancellations</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Net change</p><span class="mcv" contenteditable="true">—</span></div></div></div><div><div class="section-label">Engagement</div><div class="cards2"><div class="mc"><p class="mcl">Posts this week</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Likes this week</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Comments</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Active members (30d)</p><span class="mcv" contenteditable="true">—</span></div></div></div></div>
+<div class="grid2"><div><div class="section-label">Retention</div><div class="cards2"><div class="mc"><p class="mcl">Retention rate</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Churn rate</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Avg lifespan</p><span class="mcvs" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Longest member</p><span class="mcvs" contenteditable="true">—</span></div></div></div><div><div class="section-label">Revenue</div><div class="cards2"><div class="mc"><p class="mcl">MRR</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">New MRR this week</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Churned MRR</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">All-time revenue</p><span class="mcv" contenteditable="true">—</span></div></div></div></div>
+<div class="grid2"><div><div class="section-label">Visitors</div><div class="cards2"><div class="mc"><p class="mcl">Page views</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Unique visitors</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Top source</p><span class="mcvs" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Bounce rate</p><span class="mcv" contenteditable="true">—</span></div></div></div><div><div class="section-label">Signups &amp; conversions</div><div class="cards2"><div class="mc"><p class="mcl">New signups</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Free to paid %</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Visitor to member %</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Cost per acquisition</p><span class="mcv" contenteditable="true">—</span></div></div></div></div>
+<div class="grid2"><div><div class="section-label">Discovery ranking</div><div class="cards2"><div class="mc"><p class="mcl">Overall ranking</p><span class="mcv" contenteditable="true">—</span></div><div class="mc"><p class="mcl">Category ranking</p><span class="mcv" contenteditable="true">—</span></div></div></div><div><div class="section-label">Classroom progress</div><div id="classrooms" style="display:flex;flex-direction:column;gap:6px"></div></div></div>
+<div class="grid2" style="margin-bottom:18px"><div><div class="section-label">This week's wins</div><div class="win" contenteditable="true" id="wins">What went well this week?</div></div><div><div class="section-label">Focus &amp; notes</div><div class="win" contenteditable="true" id="focus">What are you focused on?</div></div></div>
+<div style="display:flex;justify-content:flex-end"><button class="log-btn" onclick="logMetrics()">Log this week &#x2197;</button></div>
 </div>
 <div class="footer"><strong>She Builds Anyway</strong> &nbsp;·&nbsp; She didn't wait for perfect. She built anyway.</div>
-<script>
-const STORE="sba_dashboard_v1";
-const rooms=[
-{name:"Welcome to She Builds Anyway",s:2},
-{name:"Stolen Hours — Mary's track",s:0},
-{name:"Reclaimed Hours — Kris's track",s:0},
-{name:"Spark Your Ideas",s:0},
-{name:"Find Your People",s:0},
-{name:"AI Tool Kit",s:0},
-{name:"Your Brand, Your Rules",s:0},
-{name:"Build Your First Product",s:0},
-{name:"Open for Business",s:0}
-];
-const sLabels=["Planned","Working on it","Completed","On hold"];
-const sBg=["#E8DECE","#FAE8E4","#FBF0DC","#F5C2C0"];
-const sFg=["#4A3548","#C97B69","#9A6B1A","#8B4A48"];
-function save(){
-const metrics=[...document.querySelectorAll(".mcv,.mcvs")].map(e=>e.textContent.trim());
-const metas=[...document.querySelectorAll(".emeta")].map(e=>e.textContent.trim());
-const wins=document.getElementById("wins").textContent.trim();
-const focus=document.getElementById("focus").textContent.trim();
-const statuses=rooms.map(r=>r.s);
-localStorage.setItem(STORE,JSON.stringify({metrics,metas,wins,focus,statuses}));
-}
-function load(){
-try{
-const raw=localStorage.getItem(STORE);if(!raw)return;
-const d=JSON.parse(raw);
-const me=[...document.querySelectorAll(".mcv,.mcvs")];
-const mt=[...document.querySelectorAll(".emeta")];
-if(d.metrics)d.metrics.forEach((v,i)=>{if(me[i]&&v)me[i].textContent=v;});
-if(d.metas)d.metas.forEach((v,i)=>{if(mt[i]&&v)mt[i].textContent=v;});
-if(d.wins&&d.wins!==wP){const w=document.getElementById("wins");w.textContent=d.wins;w.style.color="#4A3548";w.style.fontStyle="normal";}
-if(d.focus&&d.focus!==fP){const f=document.getElementById("focus");f.textContent=d.focus;f.style.color="#4A3548";f.style.fontStyle="normal";}
-if(d.statuses)d.statuses.forEach((s,i)=>{if(rooms[i]!==undefined)rooms[i].s=s;});
-}catch(e){}
-}
-function buildRooms(){
-const el=document.getElementById("classrooms");el.innerHTML="";
-rooms.forEach(r=>{
-const row=document.createElement("div");row.className="cls-row";
-const nm=document.createElement("span");nm.className="cls-name";nm.textContent=r.name;
-const pill=document.createElement("span");pill.className="pill";
-pill.style.background=sBg[r.s];pill.style.color=sFg[r.s];
-pill.textContent=sLabels[r.s];pill.title="Click to cycle status";
-pill.onclick=()=>{r.s=(r.s+1)%4;buildRooms();save();};
-row.appendChild(nm);row.appendChild(pill);el.appendChild(row);
-});
-}
-const wP="What went well this week?";
-const fP="What are you focused on?";
-["wins","focus"].forEach(id=>{
-const el=document.getElementById(id);
-const ph=id==="wins"?wP:fP;
-el.addEventListener("focus",()=>{if(el.textContent===ph){el.textContent="";el.style.color="#4A3548";el.style.fontStyle="normal";}});
-el.addEventListener("blur",()=>{if(!el.textContent.trim()){el.textContent=ph;el.style.color="#6B5470";el.style.fontStyle="italic";}save();});
-});
-document.addEventListener("blur",e=>{if(e.target.matches(".mcv,.mcvs,.emeta"))save();},true);
-load();buildRooms();
-function logMetrics(){
-const labels=[...document.querySelectorAll(".mcl")].map(e=>e.textContent.trim());
-const vals=[...document.querySelectorAll(".mcv,.mcvs")].map(e=>e.textContent.trim());
-const pairs=labels.map((l,i)=>l+": "+(vals[i]||"—")).join("\n");
-const cls=rooms.map(r=>r.name+": "+sLabels[r.s]).join(", ");
-const updated=document.querySelectorAll(".emeta")[0].textContent.trim();
-if(typeof sendPrompt==="function"){
-sendPrompt("Here are this week's She Builds Anyway Community metrics ("+updated+"):\n\n"+pairs+"\n\nClassroom statuses: "+cls+"\n\nPlease help me save this to my weekly metrics log.");
-}else{alert("Values saved!");}
-}
-</script>
+<script>const STORE="sba_dashboard_v1";const rooms=[{name:"Welcome to She Builds Anyway",s:2},{name:"Stolen Hours — Mary's track",s:0},{name:"Reclaimed Hours — Kris's track",s:0},{name:"Spark Your Ideas",s:0},{name:"Find Your People",s:0},{name:"AI Tool Kit",s:0},{name:"Your Brand, Your Rules",s:0},{name:"Build Your First Product",s:0},{name:"Open for Business",s:0}];const sLabels=["Planned","Working on it","Completed","On hold"];const sBg=["#E8DECE","#FAE8E4","#FBF0DC","#F5C2C0"];const sFg=["#4A3548","#C97B69","#9A6B1A","#8B4A48"];function save(){const metrics=[...document.querySelectorAll(".mcv,.mcvs")].map(e=>e.textContent.trim());const metas=[...document.querySelectorAll(".emeta")].map(e=>e.textContent.trim());const wins=document.getElementById("wins").textContent.trim();const focus=document.getElementById("focus").textContent.trim();const statuses=rooms.map(r=>r.s);localStorage.setItem(STORE,JSON.stringify({metrics,metas,wins,focus,statuses}));}function load(){try{const raw=localStorage.getItem(STORE);if(!raw)return;const d=JSON.parse(raw);const me=[...document.querySelectorAll(".mcv,.mcvs")];const mt=[...document.querySelectorAll(".emeta")];if(d.metrics)d.metrics.forEach((v,i)=>{if(me[i]&&v)me[i].textContent=v;});if(d.metas)d.metas.forEach((v,i)=>{if(mt[i]&&v)mt[i].textContent=v;});if(d.wins&&d.wins!==wP){const w=document.getElementById("wins");w.textContent=d.wins;w.style.color="#4A3548";w.style.fontStyle="normal";}if(d.focus&&d.focus!==fP){const f=document.getElementById("focus");f.textContent=d.focus;f.style.color="#4A3548";f.style.fontStyle="normal";}if(d.statuses)d.statuses.forEach((s,i)=>{if(rooms[i]!==undefined)rooms[i].s=s;});}catch(e){}}function buildRooms(){const el=document.getElementById("classrooms");el.innerHTML="";rooms.forEach(r=>{const row=document.createElement("div");row.className="cls-row";const nm=document.createElement("span");nm.className="cls-name";nm.textContent=r.name;const pill=document.createElement("span");pill.className="pill";pill.style.background=sBg[r.s];pill.style.color=sFg[r.s];pill.textContent=sLabels[r.s];pill.title="Click to cycle status";pill.onclick=()=>{r.s=(r.s+1)%4;buildRooms();save();};row.appendChild(nm);row.appendChild(pill);el.appendChild(row);});}const wP="What went well this week?";const fP="What are you focused on?";["wins","focus"].forEach(id=>{const el=document.getElementById(id);const ph=id==="wins"?wP:fP;el.addEventListener("focus",()=>{if(el.textContent===ph){el.textContent="";el.style.color="#4A3548";el.style.fontStyle="normal";}});el.addEventListener("blur",()=>{if(!el.textContent.trim()){el.textContent=ph;el.style.color="#6B5470";el.style.fontStyle="italic";}save();});});document.addEventListener("blur",e=>{if(e.target.matches(".mcv,.mcvs,.emeta"))save();},true);load();buildRooms();document.querySelectorAll(".emeta")[0].textContent=new Date().toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});save();function logMetrics(){const labels=[...document.querySelectorAll(".mcl")].map(e=>e.textContent.trim());const vals=[...document.querySelectorAll(".mcv,.mcvs")].map(e=>e.textContent.trim());const pairs=labels.map((l,i)=>l+": "+(vals[i]||"—")).join("\n");const cls=rooms.map(r=>r.name+": "+sLabels[r.s]).join(", ");const updated=document.querySelectorAll(".emeta")[0].textContent.trim();if(typeof sendPrompt==="function"){sendPrompt("Here are this week's She Builds Anyway Community metrics ("+updated+"):\n\n"+pairs+"\n\nClassroom statuses: "+cls+"\n\nPlease help me save this to my weekly metrics log.");}else{alert("Values saved!");}}</script>
 </body>
 </html>
