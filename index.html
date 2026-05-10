@@ -2,9 +2,190 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>She Builds Anyway — Community Dashboard</title>
-<style>:root{--pacific:#3B7A9A;--pacific-dk:#2D5F77;--pacific-lt:#D6E8F0;--coral:#E89B8A;--coral-dk:#C97B69;--cream:#FAF3E7;--plum:#4A3548;--plum-lt:#6B5470;--gold:#D9A95C;--white:#FFFFFF;--border:#E8DECE;}*{box-sizing:border-box;margin:0;padding:0;}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;background:var(--cream);color:var(--plum);padding:0 0 48px;}.topbar{background:var(--pacific);color:#fff;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}.topbar-name{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:normal;letter-spacing:0.02em;}.topbar-tag{font-size:12px;opacity:0.75;margin-top:2px;}.topbar-meta{font-size:12px;opacity:0.8;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}.hero{background:var(--pacific-lt);border-bottom:1px solid #BACFDA;padding:18px 28px;}.hero h2{font-family:Georgia,serif;font-size:15px;font-weight:normal;color:var(--pacific);font-style:italic;}.hero p{font-size:12px;color:var(--plum-lt);margin-top:3px;}.emeta{border-bottom:1px dashed var(--coral);cursor:text;outline:none;color:var(--pacific);font-weight:600;min-width:64px;display:inline-block;}.emeta:focus{border-bottom-style:solid;}.wrap{padding:24px 28px;}.section-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pacific);border-left:3px solid var(--coral);padding:0 0 6px 10px;margin-bottom:10px;border-bottom:1px solid var(--border);}.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-bottom:22px;}.cards2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}.mc{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:72px;transition:border-color 0.15s;}.mc:focus-within{border-color:var(--pacific);}.mcl{font-size:11px;color:var(--plum-lt);margin:0 0 5px;font-weight:400;}.mcv{font-size:24px;font-weight:700;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;border-radius:4px;font-family:Georgia,serif;}.mcv:focus{background:var(--pacific-lt);padding:0 4px;}.mcvs{font-size:15px;font-weight:600;color:var(--pacific);display:inline-block;min-width:16px;outline:none;cursor:text;}.mcvs:focus{background:var(--pacific-lt);padding:0 2px;border-radius:3px;}.cls-row{display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 12px;transition:border-color 0.15s;}.cls-row:hover{border-color:var(--pacific);}.cls-name{font-size:12px;color:var(--plum);font-weight:500;flex:1;margin-right:8px;}.pill{font-size:10px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:3px 10px;border-radius:99px;cursor:pointer;border:none;white-space:nowrap;flex-shrink:0;transition:opacity 0.15s;}.pill:hover{opacity:0.85;}.win{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:12px 14px;min-height:90px;font-size:13px;color:var(--plum-lt);outline:none;display:block;width:100%;font-style:italic;line-height:1.6;}.win:focus{border-color:var(--coral);color:var(--plum);font-style:normal;}.log-btn{font-size:13px;font-weight:600;padding:10px 22px;cursor:pointer;background:var(--coral);color:var(--white);border:none;border-radius:8px;letter-spacing:0.02em;transition:background 0.15s;}.log-btn:hover{background:var(--coral-dk);}.footer{background:var(--pacific);color:rgba(255,255,255,0.7);font-size:11px;text-align:center;padding:12px 20px;margin-top:16px;font-style:italic;}.footer strong{color:#fff;}</style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root {
+  --pacific:   #3B7A9A;
+  --pacific-dk:#2D5F77;
+  --pacific-lt:#D6E8F0;
+  --coral:     #E89B8A;
+  --coral-dk:  #C97B69;
+  --cream:     #FAF3E7;
+  --plum:      #4A3548;
+  --plum-lt:   #6B5470;
+  --gold:      #D9A95C;
+  --white:     #FFFFFF;
+  --border:    #E8DECE;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--plum);
+  padding: 0 0 48px;
+}
+.topbar {
+  background: var(--pacific);
+  color: #fff;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topbar-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+.topbar-tag { font-size: 12px; opacity: 0.75; margin-top: 2px; }
+.topbar-meta {
+  font-size: 12px;
+  opacity: 0.8;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero {
+  background: var(--pacific-lt);
+  border-bottom: 1px solid #BACFDA;
+  padding: 18px 28px;
+}
+.hero h2 {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: var(--pacific);
+  font-style: italic;
+}
+.hero p { font-size: 12px; color: var(--plum-lt); margin-top: 3px; }
+.emeta {
+  border-bottom: 1px dashed var(--coral);
+  cursor: text;
+  outline: none;
+  color: var(--pacific);
+  font-weight: 600;
+  min-width: 64px;
+  display: inline-block;
+}
+.emeta:focus { border-bottom-style: solid; }
+.wrap { padding: 24px 28px; }
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pacific);
+  border-left: 3px solid var(--coral);
+  padding: 0 0 6px 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.grid2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 18px; margin-bottom: 22px; }
+.cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cards4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+.mc {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-height: 72px;
+  transition: border-color 0.15s;
+}
+.mc:focus-within { border-color: var(--pacific); }
+.mcl { font-size: 11px; color: var(--plum-lt); margin: 0 0 5px; font-weight: 400; }
+.mcv {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--pacific);
+  display: inline-block;
+  min-width: 16px;
+  outline: none;
+  cursor: text;
+  border-radius: 4px;
+  font-family: Georgia, serif;
+}
+.mcv:focus { background: var(--pacific-lt); padding: 0 4px; }
+.mcvs {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pacific);
+  display: inline-block;
+  min-width: 16px;
+  outline: none;
+  cursor: text;
+}
+.mcvs:focus { background: var(--pacific-lt); padding: 0 2px; border-radius: 3px; }
+.cls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: border-color 0.15s;
+}
+.cls-row:hover { border-color: var(--pacific); }
+.cls-name { font-size: 12px; color: var(--plum); font-weight: 500; flex: 1; margin-right: 8px; }
+.pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.pill:hover { opacity: 0.85; }
+.win {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-height: 90px;
+  font-size: 13px;
+  color: var(--plum-lt);
+  outline: none;
+  display: block;
+  width: 100%;
+  font-style: italic;
+  line-height: 1.6;
+}
+.win:focus { border-color: var(--coral); color: var(--plum); font-style: normal; }
+.log-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 22px;
+  cursor: pointer;
+  background: var(--coral);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+.log-btn:hover { background: var(--coral-dk); }
+.footer {
+  background: var(--pacific);
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  text-align: center;
+  padding: 12px 20px;
+  margin-top: 16px;
+  font-style: italic;
+}
+.footer strong { color: #fff; }
+</style>
 </head>
 <body>
 <div class="topbar"><div><div class="topbar-name">She Builds Anyway</div><div class="topbar-tag">Community Progress Dashboard</div></div><div class="topbar-meta"><span>Updated: <span class="emeta" contenteditable="true">—</span></span><span>Launched: <span class="emeta" contenteditable="true">—</span></span></div></div>
